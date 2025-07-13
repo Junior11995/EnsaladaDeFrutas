@@ -23,3 +23,20 @@ urlpatterns = [
     path('', saludo),  
 ]
 
+from django.contrib import admin
+from django.urls import path
+from selector.views import primera_pagina
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', primera_pagina),  # Página principal
+]
+from selector.views import fruta_por_id
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', primera_pagina),
+    path('fruta/<int:fruta_id>/', fruta_por_id),  # Ruta con parámetro
+]
+
+
