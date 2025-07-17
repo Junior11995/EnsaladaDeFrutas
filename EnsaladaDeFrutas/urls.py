@@ -43,6 +43,7 @@ from django.urls import path
 from selector import views
 
 urlpatterns = [
+    path('', views.primera_pagina, name='inicio'),
     path('frutas/', views.fruta_list, name='fruta_list'),
     path('frutas/crear/', views.fruta_create, name='fruta_create'),
     path('frutas/<int:id>/editar/', views.fruta_update, name='fruta_update'),

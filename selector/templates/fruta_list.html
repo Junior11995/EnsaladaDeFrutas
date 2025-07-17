@@ -1,0 +1,14 @@
+<h2>Listado de Frutas</h2>
+<a href="{% url 'fruta_create' %}">➕ Crear nueva fruta</a>
+<ul>
+  {% for fruta in frutas %}
+    <li>
+      {{ fruta.nombre }} | Color: {{ fruta.color }} | Tipo: {{ fruta.tipo }}
+      <a href="{% url 'fruta_update' fruta.id %}">✏️ Editar</a> |
+      <a href="{% url 'fruta_delete' fruta.id %}">🗑️ Eliminar</a>
+    </li>
+  {% empty %}
+    <li>No hay frutas registradas.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'usuario_list' %}">👤 Ir al listado de usuarios</a>
