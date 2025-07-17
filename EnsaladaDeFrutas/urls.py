@@ -39,4 +39,19 @@ urlpatterns = [
     path('fruta/<int:fruta_id>/', fruta_por_id),  # Ruta con parámetro
 ]
 
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('frutas/', views.fruta_list, name='fruta_list'),
+    path('frutas/crear/', views.fruta_create, name='fruta_create'),
+    path('frutas/<int:id>/editar/', views.fruta_update, name='fruta_update'),
+    path('frutas/<int:id>/eliminar/', views.fruta_delete, name='fruta_delete'),
+
+    path('usuarios/', views.usuario_list, name='usuario_list'),
+    path('usuarios/crear/', views.usuario_create, name='usuario_create'),
+    path('usuarios/<int:id>/editar/', views.usuario_update, name='usuario_update'),
+    path('usuarios/<int:id>/eliminar/', views.usuario_delete, name='usuario_delete'),
+]
+
 
