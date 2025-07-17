@@ -40,7 +40,7 @@ urlpatterns = [
 ]
 
 from django.urls import path
-from . import views
+from selector import views
 
 urlpatterns = [
     path('frutas/', views.fruta_list, name='fruta_list'),
